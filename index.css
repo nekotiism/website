@@ -1,81 +1,196 @@
-body{
-    background:#7BA7AF;
-    margin:0;
-}
-#left-div{
-    background:#E2E4D2;
-    width:10%;
-    height: 1000px;
-    margin-top: 0;
+body {
+   margin: 0;
+   padding: 0;
+   background: #dcdcdc;
+   font-family: Arial, sans-serif;
+   font-size: 18px; /* bigger base font */
 }
 
-#twitter{
-    height:50px;
-    width:80px;
-   padding-bottom: 200px;
+/* Card bigger */
+.card {
+   width: 500px;   /* was 420px */
+   margin: 70px auto;
+   background: #ffffff;
+   border-radius: 18px;
+   padding: 30px;
+   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-#insta{
-    height:50px;
-    width:50px;
-    padding-top: 610px;
+/* Title slightly bigger */
+.title {
+   font-size: 26px;
+   font-weight: 700;
+   color: #6b6b6b;
+}
+
+.subtitle {
+   font-size: 16px;
+   color: #9c9c9c;
+   margin-top: 6px;
+}
+
+/* Bigger image box */
+.image-box {
+   width: 100%;
+   height: 220px; /* was 180px */
+   background-size: cover;
+   background-position: center;
+   border-radius: 12px;
+   margin: 18px 0;
+}
+
+/* Overlay text */
+.intro-text {
+   font-size: 28px; /* bigger */
+   font-weight: 800;
+   color: #4f4f4f;
+   text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+   position: absolute;
+   padding: 20px; /* increased */
+}
+
+.description {
+   color: #4f4f4f;
+   font-size: 18px; /* was 14px */
+   margin-top: 70px;
+   padding: 0 20px;
+   text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Bigger buttons */
+.button-row {
+   display: flex;
+   justify-content: space-between;
+   margin-top: 25px;
+}
+
+.btn {
+   width: 110px; /* was 90px */
+   padding: 10px 0; /* thicker */
+   border: 1px solid #b3b3b3;
+   border-radius: 10px;
+   text-align: center;
+   font-size: 16px; /* bigger font */
+   color: #5e5e5e;
+   cursor: pointer;
+}
+
+.section { display: none; }
+.active { display: block; }
+
+/* Footer */
+.footer {
+   text-align: center;
+   font-size: 14px;
+   color: #b3b3b3;
+   margin-top: 30px;
+}
+
+/* Positioned image wrapper */
+.img-wrapper { position: relative; }
+
+/* Content boxes */
+.content-box {
+   background: #f3f3f3;
+   padding: 20px;
+   border-radius: 12px;
+   margin-top: 20px;
+   font-size: 17px; /* bigger */
+   color: #444;
+}
+
+.flex-row {
+   display: flex;
+   gap: 15px;
+}
+
+/* Profile image bigger */
+.profile-img {
+   width: 180px; /* was 160px */
+   height: 160px; /* was 140px */
+   border-radius: 12px;
+   background-size: cover;
+   background-position: center;
+}
+
+.section-title {
+   font-size: 22px;  /* bigger */
+   font-weight: bold;
+   margin-bottom: 12px;
+}
+
+/* Header image */
+.header-image {
+    width: 100%;
+    max-width: 100%;
+    height: 230px; /* was 190px */
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 12px;
 }
 
 
-
-#watermark{
-   height:70px;
-   width:70px;
-  padding-top:12px;
+.gallery {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 14px;
+margin-top: 10px;
+}
+.gallery-item {
+  margin: 12px; /* was smaller, now gives breathing room */
+  text-align: center;
+}
+.gallery-item figcaption {
+font-size: 13px;
+color: #666;
+margin-top: 6px;
+}
+.gallery-img {
+  width: 170px;   /* was 140 */
+  height: 170px;  /* was 140 */
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.gallery-img:hover {
+transform: scale(1.03);
 }
 
-
-/* #main-div{
-    background: #E2E4D2;
-    width: 80%;
-    height: 200px;
-    margin-left:15%;
-    
-} */
-
-
-
-#name{
-    color:#455957;
-    text-align:center;
-    /* border: solid #455957 5px;
-    margin-top:10px; */
-    padding-top:25px;
-   
-    font-family:'Hanson';
-    src: url('HansonBold.woff2') format('woff2');
-    font-style: bold;
-
-    font-size: 50px;
-    font-weight: 1000;
-
+.lightbox {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.7);
+justify-content: center;
+align-items: center;
+z-index: 999;
+opacity: 0;
+animation: fadeIn 0.35s forwards;
+}
+.lightbox img {
+max-width: 90%;
+max-height: 90%;
+border-radius: 12px;
+box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 
-hr{
-    color: #455957;
-    width : 80%;
-    margin-left:10%;
-
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
 }
-p{
-    color: #455957;
-    text-align:center;
-
+@keyframes popIn {
+from { transform: scale(0.85); opacity: 0; }
+to { transform: scale(1); opacity: 1; }
 }
-img{
 
-    width : 250px;
-    height : 250px;
-    display:block;
-    margin:auto;
-
-}
-a{
-    color:#455957;
-    text-align:center;
+.lightbox img {
+max-width: 90%;
+max-height: 90%;
+border-radius: 12px;
+box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
